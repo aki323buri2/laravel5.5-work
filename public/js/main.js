@@ -48086,18 +48086,19 @@ var Buttons = (0, _reactRedux.connect)(function (state) {
 	return _react2.default.createElement(
 		'div',
 		{ className: 'buttons field' },
-		_react2.default.createElement(Button, { fa: 'play-circle-o' }),
-		_react2.default.createElement(Button, { fa: 'ban' })
+		_react2.default.createElement(Button, { enable: !connecting && !connected, fa: 'play-circle-o' }),
+		_react2.default.createElement(Button, { enable: connecting || connected, fa: 'ban' })
 	);
 });
 var Button = function Button(_ref6) {
-	var fa = _ref6.fa;
+	var enable = _ref6.enable,
+	    fa = _ref6.fa;
 	return _react2.default.createElement(
 		'p',
 		{ className: 'control' },
 		_react2.default.createElement(
 			'a',
-			{ className: 'button' },
+			{ className: 'button', disabled: !enable },
 			_react2.default.createElement(
 				'span',
 				{ className: 'icon' },

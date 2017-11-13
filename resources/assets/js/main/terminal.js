@@ -55,15 +55,16 @@ const Buttons = connect(state => state)(({
 	connected, 
 }) => (
 	<div className="buttons field">
-		<Button fa="play-circle-o"/>
-		<Button fa="ban"/>
+		<Button enable={!connecting && !connected} fa="play-circle-o"/>
+		<Button enable={ connecting ||  connected} fa="ban"/>
 	</div>
 ));
 const Button = ({
+	enable, 
 	fa, 
 }) => (
 	<p className="control">
-		<a className="button">
+		<a className="button" disabled={!enable}>
 			<span className="icon">
 				<i className={classnames('fa', _.split(fa, ' ').map(fa => `fa-${fa}`))}></i>
 			</span>
