@@ -48029,7 +48029,9 @@ var Terminal = (0, _reactRedux.connect)(function (state) {
 });
 exports.default = Terminal;
 
-var Handle = function Handle(_ref2) {
+var Handle = (0, _reactRedux.connect)(function (state) {
+	return state;
+})(function (_ref2) {
 	var connecting = _ref2.connecting,
 	    connected = _ref2.connected;
 	return _react2.default.createElement(
@@ -48056,7 +48058,7 @@ var Handle = function Handle(_ref2) {
 			_react2.default.createElement(Icon, { fa: connected ? 'feed' : 'exclamation' })
 		)
 	);
-};
+});
 var Body = function Body(_ref3) {
 	(0, _objectDestructuringEmpty3.default)(_ref3);
 	return _react2.default.createElement(
@@ -48076,15 +48078,18 @@ var Icon = function Icon(_ref4) {
 			})) })
 	);
 };
-var Buttons = function Buttons(_ref5) {
-	(0, _objectDestructuringEmpty3.default)(_ref5);
+var Buttons = (0, _reactRedux.connect)(function (state) {
+	return state;
+})(function (_ref5) {
+	var connecting = _ref5.connecting,
+	    connected = _ref5.connected;
 	return _react2.default.createElement(
 		'div',
 		{ className: 'buttons field' },
 		_react2.default.createElement(Button, { fa: 'play-circle-o' }),
 		_react2.default.createElement(Button, { fa: 'ban' })
 	);
-};
+});
 var Button = function Button(_ref6) {
 	var fa = _ref6.fa;
 	return _react2.default.createElement(
@@ -48103,7 +48108,9 @@ var Button = function Button(_ref6) {
 		)
 	);
 };
-var Messages = function Messages(_ref7) {
+var Messages = (0, _reactRedux.connect)(function (state) {
+	return state;
+})(function (_ref7) {
 	var messages = _ref7.messages;
 	return _react2.default.createElement(
 		'div',
@@ -48116,7 +48123,7 @@ var Messages = function Messages(_ref7) {
 			return _react2.default.createElement(Message, { key: key, message: message });
 		})
 	);
-};
+});
 var Message = function (_React$Component) {
 	(0, _inherits3.default)(Message, _React$Component);
 

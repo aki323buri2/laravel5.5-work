@@ -12,7 +12,7 @@ const Terminal = connect(state => state)(({
 	</div>
 ));
 export default Terminal;
-const Handle = ({
+const Handle = connect(state => state)(({
 	connecting, 
 	connected, 
 }) => (
@@ -32,7 +32,7 @@ const Handle = ({
 		</p>
 
 	</div>
-);
+));
 const Body = ({
 }) => (
 	<div className="body message-body">
@@ -50,13 +50,15 @@ const Icon = ({
 		<i className={classnames('fa', _.split(fa, ' ').map(fa => `fa-${fa}`))}></i>
 	</span>
 );
-const Buttons = ({
+const Buttons = connect(state => state)(({
+	connecting, 
+	connected, 
 }) => (
 	<div className="buttons field">
 		<Button fa="play-circle-o"/>
 		<Button fa="ban"/>
 	</div>
-);
+));
 const Button = ({
 	fa, 
 }) => (
@@ -68,7 +70,7 @@ const Button = ({
 		</a>
 	</p>
 );
-const Messages = ({
+const Messages = connect(state => state)(({
 	messages, 
 }) => (
 	<div className="box" style={{
@@ -80,7 +82,7 @@ const Messages = ({
 		<Message key={key} message={message}/>
 	)}
 	</div>
-);
+));
 const Message = class extends React.Component
 {
 	componentDidMount = () =>
